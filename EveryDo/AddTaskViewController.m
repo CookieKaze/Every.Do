@@ -11,9 +11,11 @@
 #import "MasterViewController.h"
 
 @interface AddTaskViewController ()
+
 @property (weak, nonatomic) IBOutlet UITextField *titleTextField;
 @property (weak, nonatomic) IBOutlet UITextView *descrTextView;
 @property (weak, nonatomic) IBOutlet UIPickerView *priorityPicker;
+
 @end
 
 @implementation AddTaskViewController
@@ -34,9 +36,11 @@
 - (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView {
     return 1;
 }
+
 - (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component {
     return 3;
 }
+
 - (nullable NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component {
     NSString * priorityText;
     

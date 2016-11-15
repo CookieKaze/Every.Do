@@ -9,7 +9,8 @@
 #import <UIKit/UIKit.h>
 
 @class MasterViewController;
-
 @interface AddTaskViewController : UIViewController <UIPickerViewDataSource, UIPickerViewDelegate>
+
 @property MasterViewController * mvc;
+
 @end

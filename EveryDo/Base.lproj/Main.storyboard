@@ -140,13 +140,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add New To Do" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="720-qR-Odv">
-                                <rect key="frame" x="36" y="28" width="248" height="20.5"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <rect key="frame" x="36" y="28" width="248" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Title" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="a9w-7q-UV7">
-                                <rect key="frame" x="36" y="63.5" width="248" height="30"/>
+                                <rect key="frame" x="36" y="73" width="248" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -154,9 +154,9 @@
                                     <outlet property="delegate" destination="II1-vv-di8" id="sKq-dD-sqf"/>
                                 </connections>
                             </textField>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="TOs-Xc-l00">
-                                <rect key="frame" x="36" y="110.5" width="248" height="128"/>
-                                <color key="backgroundColor" red="0.95032313479999997" green="0.95032313479999997" blue="0.95032313479999997" alpha="1" colorSpace="calibratedRGB"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Task Description" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="TOs-Xc-l00">
+                                <rect key="frame" x="36" y="120" width="248" height="128"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="128" id="Ven-qe-DME"/>
                                 </constraints>
@@ -164,19 +164,19 @@
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zvT-DH-AJb">
-                                <rect key="frame" x="36" y="287" width="248" height="84"/>
+                                <rect key="frame" x="36" y="297" width="248" height="84"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="84" id="kis-Hw-c36"/>
                                 </constraints>
                             </pickerView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Priority Level" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="79i-fq-gZQ">
-                                <rect key="frame" x="36" y="258.5" width="248" height="20.5"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Priority Level" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="79i-fq-gZQ">
+                                <rect key="frame" x="36" y="268" width="248" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aNi-bs-bC8">
-                                <rect key="frame" x="128" y="411" width="64" height="30"/>
+                                <rect key="frame" x="128" y="420.5" width="64" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="64" id="alp-fO-lUE"/>
                                     <constraint firstAttribute="height" constant="30" id="wgC-kN-7KU"/>

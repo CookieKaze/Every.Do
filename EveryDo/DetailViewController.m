@@ -30,11 +30,13 @@
     if (self.toDoItem) {
         self.titleLabel.text = self.toDoItem.title;
         self.descrLabel.text = self.toDoItem.descr;
+        
         if (self.toDoItem.isComplete) {
             self.activeLabel.text = @"Completed";
         } else {
             self.activeLabel.text = @"Not Complete";
         }
+        
         switch (self.toDoItem.priority) {
             case 0:
                 self.priorityLabel.text = @"Low";
@@ -54,15 +56,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
     [self configureView];
 }
-
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
 
 @end

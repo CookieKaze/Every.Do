@@ -15,6 +15,7 @@
 @interface MasterViewController ()
 
 @property NSMutableArray *objects;
+
 @end
 
 @implementation MasterViewController
@@ -47,7 +48,6 @@
     self.taskToAdd = nil;
 }
 
-
 #pragma mark - Segues
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
@@ -57,7 +57,6 @@
         DetailViewController *controller = (DetailViewController *)[segue destinationViewController];
         [controller setDetailItem:object];
     }
-    
     if ([[segue identifier] isEqualToString:@"addTask"]) {
         AddTaskViewController * avc = [segue destinationViewController];
         avc.mvc = self;
@@ -66,7 +65,6 @@
 
 
 #pragma mark - Table View / Cell Setup
-
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     return 1;
 }
@@ -92,6 +90,7 @@
         default:
             break;
     }
+    
     if (task.isComplete) {
         NSMutableAttributedString *attString=[[NSMutableAttributedString alloc]initWithString:task.title];
         [attString addAttribute:NSStrikethroughStyleAttributeName value:[NSNumber numberWithInt:2] range:NSMakeRange(0,[attString length])];
@@ -102,6 +101,7 @@
         cell.taskTitleLabel.text = task.title;
         cell.taskDescrLabel.text = task.descr;
     }
+    
     return cell;
 }
 
@@ -128,4 +128,5 @@
         [self.tableView reloadData];
     }
 }
+
 @end
