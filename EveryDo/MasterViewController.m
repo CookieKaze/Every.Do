@@ -35,6 +35,7 @@
     }
 }
 
+#pragma mark - Add New Task to List
 - (void)getNewTask:(id)sender {
     [self performSegueWithIdentifier:@"addTask" sender:self];
 }
@@ -64,17 +65,15 @@
 }
 
 
-#pragma mark - Table View
+#pragma mark - Table View / Cell Setup
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     return 1;
 }
 
-
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return self.objects.count;
 }
-
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     TaskTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"taskCell" forIndexPath:indexPath];
@@ -93,8 +92,6 @@
         default:
             break;
     }
-    
-    
     if (task.isComplete) {
         NSMutableAttributedString *attString=[[NSMutableAttributedString alloc]initWithString:task.title];
         [attString addAttribute:NSStrikethroughStyleAttributeName value:[NSNumber numberWithInt:2] range:NSMakeRange(0,[attString length])];
@@ -108,21 +105,27 @@
     return cell;
 }
 
-
+#pragma mark - Editing the Table Cells
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
+    ToDoTask * task = self.objects[indexPath.row];
+    BOOL editable = NO;
+    if (task.isComplete == NO) {
+        editable = YES;
+    }
+    return editable;
 }
 
+-(NSString *)tableView:(UITableView *)tableView titleForDeleteConfirmationButtonForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return @"Complete";
+}
 
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
+- (void)tableView:(UITableView *)tableView commitEditingStyle:
+(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
+    ToDoTask * task = self.objects[indexPath.row];
     if (editingStyle == UITableViewCellEditingStyleDelete) {
-        [self.objects removeObjectAtIndex:indexPath.row];
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view.
+        task.isComplete = YES;
+        [self.tableView reloadData];
     }
 }
-
-
 @end
