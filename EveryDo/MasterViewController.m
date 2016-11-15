@@ -25,11 +25,11 @@
     self.navigationItem.rightBarButtonItem = addButton;
     self.objects =[[NSMutableArray alloc] init];
     //Create toDoObjects
-    [self.objects addObject: [[ToDoTask alloc] initWithTitle:@"Wash clothes" andDescr:@"Task Description Filler" andPriority: Low]];
-    [self.objects addObject: [[ToDoTask alloc] initWithTitle:@"Walk dog" andDescr:@"Task Description Filler" andPriority: High]];
-    [self.objects addObject: [[ToDoTask alloc] initWithTitle:@"Change littler box" andDescr:@"Task Description Filler" andPriority: Medium]];
-    [self.objects addObject: [[ToDoTask alloc] initWithTitle:@"Buy grocery" andDescr:@"Task Description Filler" andPriority: Low]];
-    [self.objects addObject: [[ToDoTask alloc] initWithTitle:@"Clean room" andDescr:@"Task Description Filler" andPriority: High]];
+    [self.objects addObject: [[ToDoTask alloc] initWithTitle:@"Wash clothes" andDescr:@"Task Description Filler Task Description Filler Task Description Filler Task Description Filler Task Description Filler Task Description Filler Task Description Filler Task Description Filler" andPriority: Low]];
+    [self.objects addObject: [[ToDoTask alloc] initWithTitle:@"Walk dog" andDescr:@"Task Description Filler Task Description Filler Task Description Filler Task Description Filler Task Description Filler Task Description Filler Task Description Filler Task Description Filler" andPriority: High]];
+    [self.objects addObject: [[ToDoTask alloc] initWithTitle:@"Change littler box" andDescr:@"Task Description Filler Task Description Filler Task Description Filler Task Description Filler Task Description Filler Task Description Filler Task Description Filler Task Description Filler" andPriority: Medium]];
+    [self.objects addObject: [[ToDoTask alloc] initWithTitle:@"Buy grocery" andDescr:@"Task Description Filler Task Description Filler Task Description Filler Task Description Filler Task Description Filler Task Description Filler Task Description Filler Task Description Filler" andPriority: Low]];
+    [self.objects addObject: [[ToDoTask alloc] initWithTitle:@"Clean room" andDescr:@"Task Description Filler Task Description Filler Task Description Filler Task Description Filler Task Description Filler Task Description Filler Task Description Filler Task Description Filler" andPriority: High]];
     
     
 }
@@ -46,37 +46,12 @@
 
 #pragma mark - Segues
 
--(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    [self performSegueWithIdentifier:@"showDetail" sender:self.objects[indexPath.row]];
-}
-
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(ToDoTask *)sender {
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([[segue identifier] isEqualToString:@"showDetail"]) {
-        //NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
-        ToDoTask *task = sender;
-        
+        NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+        ToDoTask *object = self.objects[indexPath.row];
         DetailViewController *controller = (DetailViewController *)[segue destinationViewController];
-        controller.titleLabel.text = task.title;
-        controller.descrLabel.text = task.descr;
-        if (task.isComplete) {
-            controller.activeLabel.text = @"Completed";
-        } else {
-            controller.activeLabel.text = @"Not Complete";
-        }
-        switch (task.priority) {
-            case 0:
-                controller.priorityLabel.text = @"Low";
-                break;
-            case 1:
-                controller.priorityLabel.text = @"Medium";
-                break;
-            case 2:
-                controller.priorityLabel.text = @"High";
-                break;
-            default:
-                break;
-        }
+        [controller setDetailItem:object];
     }
 }
 
