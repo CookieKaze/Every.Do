@@ -37,14 +37,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TASK TITLE" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FE2-21-rbb">
-                                <rect key="frame" x="36" y="104" width="248" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FE2-21-rbb">
+                                <rect key="frame" x="36" y="104" width="248" height="0.0"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="vZ4-Fs-Uj5">
-                                <rect key="frame" x="36" y="145" width="248" height="128"/>
+                                <rect key="frame" x="36" y="124" width="248" height="128"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="128" id="pj3-Q6-ut1"/>
@@ -54,7 +54,7 @@
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Active: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nfx-Ye-F0k">
-                                <rect key="frame" x="36" y="330" width="60" height="21"/>
+                                <rect key="frame" x="36" y="309" width="60" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="01B-kY-Hf5"/>
                                     <constraint firstAttribute="width" constant="60" id="A9w-kI-GJc"/>
@@ -64,7 +64,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Priority:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S92-hE-Avm">
-                                <rect key="frame" x="36" y="303" width="60" height="21"/>
+                                <rect key="frame" x="36" y="282" width="60" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="AWd-Zo-4yc"/>
                                     <constraint firstAttribute="width" constant="60" id="Qlx-D5-xCL"/>
@@ -74,7 +74,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="High" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AeV-Kc-R06">
-                                <rect key="frame" x="126" y="303" width="158" height="21"/>
+                                <rect key="frame" x="126" y="282" width="158" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="n04-UU-Uln"/>
                                 </constraints>
@@ -83,7 +83,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Yes" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B5g-vY-Nbg">
-                                <rect key="frame" x="126" y="329" width="161" height="21"/>
+                                <rect key="frame" x="126" y="309" width="161" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="U9q-63-on5"/>
                                 </constraints>
@@ -111,11 +111,17 @@
                             <constraint firstItem="FE2-21-rbb" firstAttribute="top" secondItem="SYR-Wa-9uf" secondAttribute="bottom" constant="40" id="gjb-MJ-gZ4"/>
                             <constraint firstItem="vZ4-Fs-Uj5" firstAttribute="top" secondItem="FE2-21-rbb" secondAttribute="bottom" constant="20" id="jvy-vh-WEq"/>
                             <constraint firstItem="AeV-Kc-R06" firstAttribute="leading" secondItem="S92-hE-Avm" secondAttribute="trailing" constant="30" id="m6K-vj-Exq"/>
-                            <constraint firstItem="B5g-vY-Nbg" firstAttribute="top" secondItem="AeV-Kc-R06" secondAttribute="bottom" constant="5" id="oX3-Zs-4KA"/>
+                            <constraint firstItem="B5g-vY-Nbg" firstAttribute="top" secondItem="AeV-Kc-R06" secondAttribute="bottom" constant="6" id="oX3-Zs-4KA"/>
                         </constraints>
                     </view>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="Detail" id="mOI-FS-AaM"/>
+                    <connections>
+                        <outlet property="activeLabel" destination="B5g-vY-Nbg" id="ins-Dp-NWf"/>
+                        <outlet property="descrLabel" destination="vZ4-Fs-Uj5" id="QtZ-zC-TPs"/>
+                        <outlet property="priorityLabel" destination="AeV-Kc-R06" id="heC-T5-P1D"/>
+                        <outlet property="titleLabel" destination="FE2-21-rbb" id="Te1-qR-xou"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FJe-Yq-33r" sceneMemberID="firstResponder"/>
             </objects>
@@ -175,7 +181,6 @@
                                     <outlet property="priorityLabel" destination="LAD-QO-bW1" id="eAc-Bx-V1f"/>
                                     <outlet property="taskDescrLabel" destination="8wi-pQ-56H" id="V7G-71-kr9"/>
                                     <outlet property="taskTitleLabel" destination="rr8-3E-6Hx" id="SVx-ST-jY7"/>
-                                    <segue destination="JEX-9P-axG" kind="show" identifier="showDetail" id="3g5-t3-D5n"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -185,7 +190,10 @@
                             <outlet property="delegate" destination="7bK-jq-Zjz" id="RA6-mI-bju"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Master" id="Zdf-7t-Un8"/>
+                    <navigationItem key="navigationItem" title="To Do List" id="Zdf-7t-Un8"/>
+                    <connections>
+                        <segue destination="JEX-9P-axG" kind="show" identifier="showDetail" id="yCU-nZ-cOo"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Rux-fX-hf1" sceneMemberID="firstResponder"/>
             </objects>

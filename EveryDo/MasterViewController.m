@@ -34,17 +34,6 @@
     
 }
 
-
-- (void)viewWillAppear:(BOOL)animated {
-}
-
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
-
 - (void)insertNewObject:(id)sender {
     if (!self.objects) {
         self.objects = [[NSMutableArray alloc] init];
@@ -57,12 +46,37 @@
 
 #pragma mark - Segues
 
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    [self performSegueWithIdentifier:@"showDetail" sender:self.objects[indexPath.row]];
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(ToDoTask *)sender {
     if ([[segue identifier] isEqualToString:@"showDetail"]) {
-        NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
-        NSDate *object = self.objects[indexPath.row];
+        //NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+        ToDoTask *task = sender;
+        
         DetailViewController *controller = (DetailViewController *)[segue destinationViewController];
-        [controller setDetailItem:object];
+        controller.titleLabel.text = task.title;
+        controller.descrLabel.text = task.descr;
+        if (task.isComplete) {
+            controller.activeLabel.text = @"Completed";
+        } else {
+            controller.activeLabel.text = @"Not Complete";
+        }
+        switch (task.priority) {
+            case 0:
+                controller.priorityLabel.text = @"Low";
+                break;
+            case 1:
+                controller.priorityLabel.text = @"Medium";
+                break;
+            case 2:
+                controller.priorityLabel.text = @"High";
+                break;
+            default:
+                break;
+        }
     }
 }
 
