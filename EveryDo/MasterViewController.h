@@ -7,11 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ToDoTask.h"
 
 @class DetailViewController;
 
 @interface MasterViewController : UITableViewController
-
-
+@property ToDoTask * taskToAdd;
 @end
 

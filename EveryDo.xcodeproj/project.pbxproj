@@ -16,6 +16,7 @@
 		1D2F65711DDB6AD100D644FC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1D2F656F1DDB6AD100D644FC /* LaunchScreen.storyboard */; };
 		1D2F657A1DDB6B9D00D644FC /* ToDoTask.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D2F65791DDB6B9D00D644FC /* ToDoTask.m */; };
 		1D2F657D1DDB703800D644FC /* TaskTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D2F657C1DDB703800D644FC /* TaskTableViewCell.m */; };
+		1D2F65801DDB98BB00D644FC /* AddTaskViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D2F657F1DDB98BB00D644FC /* AddTaskViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +36,8 @@
 		1D2F65791DDB6B9D00D644FC /* ToDoTask.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ToDoTask.m; sourceTree = "<group>"; };
 		1D2F657B1DDB703800D644FC /* TaskTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TaskTableViewCell.h; sourceTree = "<group>"; };
 		1D2F657C1DDB703800D644FC /* TaskTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TaskTableViewCell.m; sourceTree = "<group>"; };
+		1D2F657E1DDB98BB00D644FC /* AddTaskViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddTaskViewController.h; sourceTree = "<group>"; };
+		1D2F657F1DDB98BB00D644FC /* AddTaskViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddTaskViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,6 +79,8 @@
 				1D2F65791DDB6B9D00D644FC /* ToDoTask.m */,
 				1D2F657B1DDB703800D644FC /* TaskTableViewCell.h */,
 				1D2F657C1DDB703800D644FC /* TaskTableViewCell.m */,
+				1D2F657E1DDB98BB00D644FC /* AddTaskViewController.h */,
+				1D2F657F1DDB98BB00D644FC /* AddTaskViewController.m */,
 				1D2F655E1DDB6AD100D644FC /* Supporting Files */,
 			);
 			path = EveryDo;
@@ -165,6 +170,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1D2F65801DDB98BB00D644FC /* AddTaskViewController.m in Sources */,
 				1D2F65631DDB6AD100D644FC /* AppDelegate.m in Sources */,
 				1D2F657A1DDB6B9D00D644FC /* ToDoTask.m in Sources */,
 				1D2F657D1DDB703800D644FC /* TaskTableViewCell.m in Sources */,

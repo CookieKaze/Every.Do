@@ -16,8 +16,8 @@ typedef enum priorityLevel{
 
 @interface ToDoTask : NSObject
 
-@property (weak, nonatomic) NSString * title;
-@property (weak, nonatomic) NSString * descr;
+@property (strong, nonatomic) NSString * title;
+@property (strong, nonatomic) NSString * descr;
 @property (nonatomic) priorityLevel priority;
 @property (nonatomic) BOOL isComplete;
 

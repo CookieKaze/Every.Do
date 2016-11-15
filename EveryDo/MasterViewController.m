@@ -10,6 +10,7 @@
 #import "DetailViewController.h"
 #import "ToDoTask.h"
 #import "TaskTableViewCell.h"
+#import "AddTaskViewController.h"
 
 @interface MasterViewController ()
 
@@ -21,26 +22,28 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.navigationItem.leftBarButtonItem = self.editButtonItem;
-    UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(insertNewObject:)];
+    UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(getNewTask:)];
     self.navigationItem.rightBarButtonItem = addButton;
-    self.objects =[[NSMutableArray alloc] init];
-    //Create toDoObjects
-    [self.objects addObject: [[ToDoTask alloc] initWithTitle:@"Wash clothes" andDescr:@"Task Description Filler Task Description Filler Task Description Filler Task Description Filler Task Description Filler Task Description Filler Task Description Filler Task Description Filler" andPriority: Low]];
-    [self.objects addObject: [[ToDoTask alloc] initWithTitle:@"Walk dog" andDescr:@"Task Description Filler Task Description Filler Task Description Filler Task Description Filler Task Description Filler Task Description Filler Task Description Filler Task Description Filler" andPriority: High]];
-    [self.objects addObject: [[ToDoTask alloc] initWithTitle:@"Change littler box" andDescr:@"Task Description Filler Task Description Filler Task Description Filler Task Description Filler Task Description Filler Task Description Filler Task Description Filler Task Description Filler" andPriority: Medium]];
-    [self.objects addObject: [[ToDoTask alloc] initWithTitle:@"Buy grocery" andDescr:@"Task Description Filler Task Description Filler Task Description Filler Task Description Filler Task Description Filler Task Description Filler Task Description Filler Task Description Filler" andPriority: Low]];
-    [self.objects addObject: [[ToDoTask alloc] initWithTitle:@"Clean room" andDescr:@"Task Description Filler Task Description Filler Task Description Filler Task Description Filler Task Description Filler Task Description Filler Task Description Filler Task Description Filler" andPriority: High]];
-    
-    
+    if (!self.objects) {
+        self.objects =[[NSMutableArray alloc] init];
+    }
 }
 
-- (void)insertNewObject:(id)sender {
-    if (!self.objects) {
-        self.objects = [[NSMutableArray alloc] init];
+-(void) viewWillAppear:(BOOL)animated {
+    if (self.taskToAdd) {
+        [self insertNewTask];
     }
-    [self.objects insertObject:[NSDate date] atIndex:0];
+}
+
+- (void)getNewTask:(id)sender {
+    [self performSegueWithIdentifier:@"addTask" sender:self];
+}
+
+-(void) insertNewTask {
+    [self.objects insertObject:self.taskToAdd atIndex:0];
     NSIndexPath *indexPath = [NSIndexPath indexPathForRow:0 inSection:0];
     [self.tableView insertRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
+    self.taskToAdd = nil;
 }
 
 
@@ -52,6 +55,11 @@
         ToDoTask *object = self.objects[indexPath.row];
         DetailViewController *controller = (DetailViewController *)[segue destinationViewController];
         [controller setDetailItem:object];
+    }
+    
+    if ([[segue identifier] isEqualToString:@"addTask"]) {
+        AddTaskViewController * avc = [segue destinationViewController];
+        avc.mvc = self;
     }
 }
 
