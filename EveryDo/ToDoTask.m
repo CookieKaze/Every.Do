@@ -10,14 +10,14 @@
 
 @implementation ToDoTask
 
-- (instancetype)initWithTitle: (NSString *) title andDescr: (NSString * ) descr
+- (instancetype)initWithTitle: (NSString *) title andDescr: (NSString * ) descr andPriority: (priorityLevel) priority
 {
     self = [super init];
     if (self) {
         _title = title;
         _descr = descr;
         _isComplete = NO;
-        _priority = Low;
+        _priority = priority;
     }
     return self;
 }

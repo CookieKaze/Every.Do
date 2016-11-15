@@ -22,6 +22,6 @@ typedef enum priorityLevel{
 @property (nonatomic) BOOL isComplete;
 
 
-- (instancetype)initWithTitle: (NSString *) title andDescr: (NSString * ) descr;
+- (instancetype)initWithTitle: (NSString *) title andDescr: (NSString * ) descr andPriority: (priorityLevel) priority;
 
 @end

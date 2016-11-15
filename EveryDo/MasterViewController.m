@@ -25,11 +25,11 @@
     self.navigationItem.rightBarButtonItem = addButton;
     self.objects =[[NSMutableArray alloc] init];
     //Create toDoObjects
-    [self.objects addObject: [[ToDoTask alloc] initWithTitle:@"Wash clothes" andDescr:@"Task Description Filler"]];
-    [self.objects addObject: [[ToDoTask alloc] initWithTitle:@"Walk dog" andDescr:@"Task Description Filler"]];
-    [self.objects addObject: [[ToDoTask alloc] initWithTitle:@"Change littler box" andDescr:@"Task Description Filler"]];
-    [self.objects addObject: [[ToDoTask alloc] initWithTitle:@"Buy grocery" andDescr:@"Task Description Filler"]];
-    [self.objects addObject: [[ToDoTask alloc] initWithTitle:@"Clean room" andDescr:@"Task Description Filler"]];
+    [self.objects addObject: [[ToDoTask alloc] initWithTitle:@"Wash clothes" andDescr:@"Task Description Filler" andPriority: Low]];
+    [self.objects addObject: [[ToDoTask alloc] initWithTitle:@"Walk dog" andDescr:@"Task Description Filler" andPriority: High]];
+    [self.objects addObject: [[ToDoTask alloc] initWithTitle:@"Change littler box" andDescr:@"Task Description Filler" andPriority: Medium]];
+    [self.objects addObject: [[ToDoTask alloc] initWithTitle:@"Buy grocery" andDescr:@"Task Description Filler" andPriority: Low]];
+    [self.objects addObject: [[ToDoTask alloc] initWithTitle:@"Clean room" andDescr:@"Task Description Filler" andPriority: High]];
     
     
 }
